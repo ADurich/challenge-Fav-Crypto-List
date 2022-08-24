@@ -7,11 +7,7 @@ import DetailCurrency from './components/DetailCurrency';
 import Delete from './components/Delete';
 
 //deploy
-//responsive
-//routes segmentadas
-//ver si uso los import export para los componentes creados de mui
 //try and catch
-//estilos
 //corregir nombres y console.log
 
 

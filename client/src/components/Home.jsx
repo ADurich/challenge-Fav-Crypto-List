@@ -25,9 +25,7 @@ export default function Home() {
 
   return (
 
-      <div>   
-      
-      {/*----------------CARDS-----------------------------------*/}
+      <div>       
         <>
           {favCurrencies&&
               <Box sx={{ flexGrow: 1 }}>

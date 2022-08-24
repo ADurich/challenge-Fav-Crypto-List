@@ -49,7 +49,7 @@ const handleSubmit = (event) => {
         dispatch(postFavCurrency(newCurrency));                     
         navigate('/Home')
       }  else{
-        console.log('pone algo')
+        alert('Colocar un valor')
       }                    
   };  
 
@@ -76,10 +76,6 @@ return (
                       <Typography gutterBottom variant="h5" component="div">
                         {el.coin}
                       </Typography>
-                      {/*<Typography variant="body2" color="text.secondary">
-                                              <b>Precio: US$</b>
-                                              {el.prices.USD}
-                                            </Typography>*/}
                     </CardContent>
                   </CardActionArea>
                 </Card>

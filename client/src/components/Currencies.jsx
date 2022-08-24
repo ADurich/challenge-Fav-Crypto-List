@@ -19,14 +19,7 @@ export default function Home() {
 
 //-------------------------------------------------------------
      const allCurrencies=useSelector((state)=> state.allCurrencies);
-     //var pageNumber=useSelector((state)=> state.pageNumber);
-     //var notModifiedPageNumber=useSelector((state)=> state.notModifiedPageNumber);
-     //var backPageNumber=useSelector((state)=>state.backPageNumber)
-     //var initialPageNumber=useSelector((state)=>state.initialPageNumber)
-     //var notVideogames=useSelector((state)=>state.notVideogames) 
-     var searchedCurrencies=useSelector((state)=> state.searchedCurrencies);
      var searchName=useSelector((state)=> state.searchName);
-
 
      const [currentPage,setCurrentPage]= useState(1);
      const [currenciesPerPage]= useState(9);
@@ -43,30 +36,9 @@ export default function Home() {
         indexOfLastCurrency = currentPage * currenciesPerPage;
 
      } 
-
      const indexOfFirstCurrency = indexOfLastCurrency - currenciesPerPage; 
      const currentCurrencies = allCurrencies.slice(indexOfFirstCurrency,indexOfLastCurrency)
-     if(currentCurrencies.length>0){
-      console.log("mis monedas",currentCurrencies) 
-     }else{
-      console.log("no") 
-     }
-     //if(pageNumber===1){ 
-        //if(searchName!==""){
-          //indexOfLastVideogame = pageNumber * videogamesPerPage;
-        //}else{
-          //indexOfLastVideogame = notModifiedPageNumber * videogamesPerPage;
-        //}     
-     //}
-     //if(pageNumber!==1&&backPageNumber===false){
-      //indexOfLastCurrency = currentPage * currenciesPerPage;
-     //}
-     //if(backPageNumber===true&&pageNumber!==1){
-      //indexOfLastVideogame = notModifiedPageNumber * videogamesPerPage;
-     //}
-     //const indexOfFirstCurrency = indexOfLastCurrency - currenciesPerPage; 
-     //const currentCurrencies = allCurrencies.slice(indexOfFirstCurrency,indexOfLastCurrency)
-       
+      
   
 //-------------------------------------------------------------
 
@@ -81,7 +53,6 @@ export default function Home() {
     //dispatch(getBackPage(false));
 
   }; 
-
 
   return (
 
@@ -110,9 +81,7 @@ export default function Home() {
                   })}
                 </Grid>
               </Box>} 
-        </>
-          
-      
+        </>        
       </div>
   );
 }

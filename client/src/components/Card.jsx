@@ -28,7 +28,7 @@ const handleCheck=(event)=>{
 }
 
   return (
-    <div id="cardcard" className="card text-center bg-dark animate__animated animate__fadeInUp">      
+    <div className="card text-center bg-dark animate__animated animate__fadeInUp">      
       {image?
       <div className="overflow">
         <img src={image} alt="img not found" width="200px" height="200px" className="card-img-top" />
