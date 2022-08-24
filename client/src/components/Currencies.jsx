@@ -18,7 +18,8 @@ export default function Home() {
    }, [dispatch]);
 
 //-------------------------------------------------------------
-     const allCurrencies=useSelector((state)=> state.allCurrencies);
+     const allCurrencies=useSelector((state)=> state.allCurrencies); 
+     var searchedCurrencies=useSelector((state)=> state.searchedCurrencies);
      var searchName=useSelector((state)=> state.searchName);
 
      const [currentPage,setCurrentPage]= useState(1);
@@ -36,10 +37,10 @@ export default function Home() {
         indexOfLastCurrency = currentPage * currenciesPerPage;
 
      } 
+
      const indexOfFirstCurrency = indexOfLastCurrency - currenciesPerPage; 
      const currentCurrencies = allCurrencies.slice(indexOfFirstCurrency,indexOfLastCurrency)
       
-  
 //-------------------------------------------------------------
 
 
@@ -50,9 +51,8 @@ export default function Home() {
     }
     setCurrentPage(page);
     dispatch(getSelectedPageNumber(page));
-    //dispatch(getBackPage(false));
-
   }; 
+
 
   return (
 
@@ -81,7 +81,9 @@ export default function Home() {
                   })}
                 </Grid>
               </Box>} 
-        </>        
+        </>
+          
+      
       </div>
   );
 }

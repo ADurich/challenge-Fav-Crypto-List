@@ -12,7 +12,6 @@ export default function Home() {
 
    const dispatch = useDispatch();
    const navigate=useNavigate();
-   const favCurrencies=useSelector((state)=> state.favCurrencies);
 
      useEffect(() => {
        dispatch(getFavCurrencies());
@@ -23,11 +22,13 @@ export default function Home() {
     navigate('/Currencies')
    }  
 
+     const favCurrencies=useSelector((state)=> state.favCurrencies);
+
   return (
 
-      <div>       
+      <div>   
         <>
-          {favCurrencies&&
+          {favCurrencies.length>0&&
               <Box sx={{ flexGrow: 1 }}>
                 <Grid container spacing={5}>
                   {favCurrencies.map((coin) => { 
@@ -48,9 +49,7 @@ export default function Home() {
               <Button variant="contained" color="success" onClick={handleAdd} sx={{mt:2}}>
                   Agregar
               </Button>
-            </div>
-        
-          
+            </div>   
       
       </div>
   );
