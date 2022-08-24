@@ -49,7 +49,7 @@ export default function Home() {
               <Button variant="contained" color="success" onClick={handleAdd} sx={{mt:2}}>
                   Agregar
               </Button>
-            </div>   
+            </div>     
       
       </div>
   );
