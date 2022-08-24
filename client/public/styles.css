@@ -1,0 +1,41 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+
+}
+
+html{
+    scroll-behavior: smooth;
+    box-shadow: no;
+}
+
+
+a{text-decoration: none !important;}
+
+#appbar{
+    background: #0f0c29; 
+    background: -webkit-linear-gradient(to right, #24243e, #302b63, #0f0c29); 
+    background: linear-gradient(to right, #24243e, #302b63, #0f0c29); 
+    margin-bottom: 10px;
+}
+
+
+/*
+.overflow{
+    overflow: hidden;
+}
+
+.card-img-top{
+    transition: all 1s ease-in-out;
+}
+
+.card-img-top:hover{
+    transform: scale(2);
+}
+
+.card:hover{
+    box-shadow: 5px 10px 20px 1px rgba(255, 255, 255, 0.273) !important;
+    transition: all 0.7s linear;
+}
+*/
