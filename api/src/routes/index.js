@@ -13,15 +13,15 @@ const infoFromApi=async()=>{
 
     const tickers = ['btc','eth','bch','ltc','xmr','trx','trc20/doge','trc20/tusd',
     'trc20/usdc','trc20/usdt','trc20/wbtc','bep20/dai','bep20/neko','bep20/shib','bep20/uni',];
-    var resp=[]
+    var resp;
     var data=[];
 
     for(let i=0;i<tickers.length;i++){
-      resp.push(await fetch(
+      resp=await fetch(
         `https://api.cryptapi.io/${tickers[i]}/info/?${query}`,
         {method: 'GET'}
-      )) 
-      data.push(JSON.parse(await resp[i].text()))
+      )
+      data.push(JSON.parse(await resp.text()))
     }
       
       return data;
