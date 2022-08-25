@@ -1,4 +1,4 @@
-## Comenzando
+## Instrucciones
 
  1. Clonar repositorio
  2. En PostgreSQL ir al database manager y crear una nueva base de datos llamada 'currencies' que es la que se va a usar para guardar los registros.
@@ -32,3 +32,5 @@ La variable PORT es el numero de puerto que tengas.
 - [ ] Redux
 - [ ] Express
 - [ ] Sequelize - Postgres
+
+#### Nota: los elementos son pocos y tardan unos segundos en mostrarse por consumir el endpoint por cada moneda  
