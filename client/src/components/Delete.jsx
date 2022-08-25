@@ -14,7 +14,7 @@ export default function Home() {
           <Stack sx={{ width: '100%' }} spacing={2}>
             <Alert severity="success">Moneda eliminada</Alert>
           </Stack>
-          <Link to='/Home'>
+          <Link to='/FavCurrencies'>
             <Button variant="contained" sx={{mt:2}}>
                   Volver
             </Button>

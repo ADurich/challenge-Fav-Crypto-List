@@ -72,3 +72,6 @@ a{text-decoration: none !important;}
     margin-bottom: 10px;
 }
 
+.card-body{
+  padding: 0.5em !important;
+}

@@ -47,7 +47,7 @@ const handleSubmit = (event) => {
           img:myCurrency[0].logo,ticker:myCurrency[0].ticker,amount:amount,currenciestoconvert:currencies,}
         console.log(newCurrency)
         dispatch(postFavCurrency(newCurrency));                     
-        navigate('/Home')
+        navigate('/FavCurrencies')
       }  else{
         alert('Colocar un valor')
       }                    
