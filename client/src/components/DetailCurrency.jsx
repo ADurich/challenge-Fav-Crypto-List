@@ -81,7 +81,7 @@ return (
                 </Card>
          );
          })}  
-            <Box sx={{ minWidth: 120 }}>
+            <Box sx={{ minWidth: 120}}>
               <FormControl sx={{ width: 120 }}>
                 <InputLabel id="demo-simple-select-label">Cantidad</InputLabel>
                 <Select

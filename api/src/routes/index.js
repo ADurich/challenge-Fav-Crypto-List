@@ -11,8 +11,7 @@ var currenciesList;
 const infoFromApi=async()=>{
     const query = new URLSearchParams({prices: '1'}).toString();
 
-    const tickers = ['btc','eth','bch','ltc','xmr','trx','trc20/doge','trc20/tusd',
-    'trc20/usdc','trc20/usdt','trc20/wbtc','bep20/dai','bep20/neko','bep20/shib','bep20/uni',];
+    const tickers = ['btc','eth','bch','ltc','xmr','trx'];
     var resp;
     var data=[];
 

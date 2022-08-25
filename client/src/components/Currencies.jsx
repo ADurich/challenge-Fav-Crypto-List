@@ -40,6 +40,7 @@ export default function Home() {
 
      const indexOfFirstCurrency = indexOfLastCurrency - currenciesPerPage; 
      const currentCurrencies = allCurrencies.slice(indexOfFirstCurrency,indexOfLastCurrency)
+     console.log('mis monedas: ',currentCurrencies)
       
 //-------------------------------------------------------------
 
@@ -67,7 +68,7 @@ export default function Home() {
           /> 
 
       {/*----------------CARDS-----------------------------------*/}
-        <>{allCurrencies&&
+        <>{currentCurrencies?
               <Box sx={{ flexGrow: 1 }}>
                 <Grid container spacing={5}>
                   {currentCurrencies.map((coin) => { 
@@ -80,7 +81,12 @@ export default function Home() {
                     ); 
                   })}
                 </Grid>
-              </Box>} 
+              </Box>:
+              <div className="center">
+                 <div className="ring"></div>
+                 <span className="loading">loading...</span>
+              </div>
+            } 
         </>
           
       
