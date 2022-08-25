@@ -1,5 +1,5 @@
-import React from 'react';
-import { useDispatch } from "react-redux";
+import React, {useState} from 'react';
+import { useDispatch} from "react-redux";
 import { getCurrenciesNames,getSearchedCurrencies} from '../actions';
 import { styled, alpha } from '@mui/material/styles';
 import AppBar from '@mui/material/AppBar';
@@ -10,6 +10,8 @@ import Typography from '@mui/material/Typography';
 import InputBase from '@mui/material/InputBase';
 import MenuIcon from '@mui/icons-material/Menu';
 import SearchIcon from '@mui/icons-material/Search';
+import Modal from '@mui/material/Modal';
+import LinearProgress from '@mui/material/LinearProgress';
 
 const Search = styled('div')(({ theme }) => ({
   position: 'relative',
@@ -43,16 +45,22 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 }));
 
 
+
 export default function SearchBar (){
 
     const dispatch = useDispatch() 
-      function handleInputChange(e){
-        e.preventDefault() 
-        let name=e.target.value
-        dispatch(getCurrenciesNames(name))
+    const [open, setOpen] =useState(false);
+
+      const handleInputChange=(e)=>{
+        e.preventDefault()
+        dispatch(getCurrenciesNames(e.target.value))
         dispatch(getSearchedCurrencies(true))
+        setOpen(true);
       }
 
+      const handleClose = () => {
+        setOpen(false);
+      };
 
     return (
         <div>           
@@ -87,7 +95,19 @@ export default function SearchBar (){
                   </Search>
                 </Toolbar>
               </AppBar>
-            </Box>            
+            </Box> 
+            <div>
+              <Modal
+                open={open}
+                onClose={handleClose}
+                aria-labelledby="modal-modal-title"
+                aria-describedby="modal-modal-description"
+              >
+                <Box sx={{ width: '100%' }}>
+                  <LinearProgress color='success' />
+                </Box>
+              </Modal>
+            </div>                   
         </div>
     )
 
