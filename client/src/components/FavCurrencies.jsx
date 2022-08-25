@@ -8,7 +8,7 @@ import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
 import Button from '@mui/material/Button';
 
-export default function Home() {
+export default function FavCurrencies() {
 
    const dispatch = useDispatch();
    const navigate=useNavigate();

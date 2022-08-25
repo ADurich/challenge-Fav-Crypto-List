@@ -4,9 +4,8 @@ import Alert from '@mui/material/Alert';
 import Stack from '@mui/material/Stack';
 import Button from '@mui/material/Button';
 
-export default function Home() {
+export default function Delete() {
 
-   
 
   return (
 

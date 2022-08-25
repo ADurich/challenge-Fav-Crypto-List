@@ -14,7 +14,7 @@ import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 
-export default function DetailGames({match}){
+export default function DetailCurrency(){
 const dispatch = useDispatch()
 
 let {id}=useParams();
@@ -45,7 +45,6 @@ const handleSubmit = (event) => {
       if(amount){
         const newCurrency={name:myCurrency[0].coin,price:myCurrency[0].prices,
           img:myCurrency[0].logo,ticker:myCurrency[0].ticker,amount:amount,currenciestoconvert:currencies,}
-        console.log(newCurrency)
         dispatch(postFavCurrency(newCurrency));                     
         navigate('/FavCurrencies')
       }  else{

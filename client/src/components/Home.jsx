@@ -26,7 +26,7 @@ export default function Home() {
      const [currenciesPerPage]= useState(9);
      var indexOfLastCurrency; 
      if(searchedCurrencies){ 
-          if(searchName!==""){
+          if(searchName){
             indexOfLastCurrency = 1 * currenciesPerPage; 
           }else{
             indexOfLastCurrency = currentPage * currenciesPerPage;
@@ -40,7 +40,7 @@ export default function Home() {
 
      const indexOfFirstCurrency = indexOfLastCurrency - currenciesPerPage; 
      const currentCurrencies = allCurrencies.slice(indexOfFirstCurrency,indexOfLastCurrency)
-     console.log('mis monedas: ',currentCurrencies)
+
       
 //-------------------------------------------------------------
 
@@ -87,9 +87,7 @@ export default function Home() {
                  <span className="loading">loading...</span>
               </div>
             } 
-        </>
-          
-      
+        </>     
       </div>
   );
 }
