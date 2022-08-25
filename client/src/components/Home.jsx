@@ -28,7 +28,7 @@ export default function Home() {
 
       <div>   
         <>
-          {favCurrencies.length>0&&
+          {favCurrencies&&
               <Box sx={{ flexGrow: 1 }}>
                 <Grid container spacing={5}>
                   {favCurrencies.map((coin) => { 
@@ -46,7 +46,7 @@ export default function Home() {
         </>
         
             <div id="add">
-              <Button variant="contained" color="success" onClick={handleAdd} sx={{mt:2}}>
+              <Button variant="contained" color="success" onClick={handleAdd} sx={{mt:5}}>
                   Agregar
               </Button>
             </div>     

@@ -30,7 +30,7 @@ var currencies=[];
 
 const myCurrency = useSelector((state) => state.details);
 
-if(myCurrency.length>0){
+if(myCurrency.length){
   for(const currency in myCurrency[0].prices){
     currencies.push(currency)
   }
@@ -42,7 +42,7 @@ const handleCheck = (event)=>{
 
 const handleSubmit = (event) => {
       event.preventDefault();
-      if(amount!==""){
+      if(amount){
         const newCurrency={name:myCurrency[0].coin,price:myCurrency[0].prices,
           img:myCurrency[0].logo,ticker:myCurrency[0].ticker,amount:amount,currenciestoconvert:currencies,}
         console.log(newCurrency)

@@ -2,25 +2,34 @@ import axios from "axios";
 
 export function getFavCurrencies() {
   return async function (dispatch) {
-    var jsonCurrencies = await axios("/favCurrencies", { 
+    var jsonFavCurrencies = await axios("/favCurrencies", { 
     });
-    return dispatch({ type: "GET_FAV_CURRENCIES", payload: jsonCurrencies.data });
+    return dispatch({ type: "GET_FAV_CURRENCIES", payload: jsonFavCurrencies.data });
   };
 }
 
 export function postFavCurrency(newCurrency){
   return async function(dispatch){
+    try{
 
     const create=await axios.post("/favCurrencies",newCurrency);
     return dispatch({type:"POST_CURRENCY",payload:create.data})
-   
+
+    }catch(error){
+    console.log(error)
+  }
   }
 }
 export function getCurrencies() {
   return async function (dispatch) {
-    var json = await axios("/currencies", { 
+    try{
+    var jsonCurrencies = await axios("/currencies", { 
     });
-    return dispatch({ type: "GET_CURRENCIES", payload: json.data });
+    return dispatch({ type: "GET_CURRENCIES", payload: jsonCurrencies.data });
+
+    }catch(error){
+    console.log(error)
+  }
   };
 }
 
@@ -62,13 +71,23 @@ export function getCurrenciesNames(searchName){
 export function getSelectedPageNumber(selectedPageNumber) {     
    return async function(dispatch){
 
+    try{
     return dispatch({type:"GET_SELECTED_PAGE_NUMBER",payload:selectedPageNumber});
+
+    }catch(error){
+    console.log(error)
+  }
   };
 }
 
 export function getSearchedCurrencies(searchedCurrencies) {     
    return async function(dispatch){
 
+    try{
     return dispatch({type:"GET_SEARCHED_CURRENCIES",payload:searchedCurrencies});
+
+    }catch(error){
+    console.log(error)
+  }
   };
 }
